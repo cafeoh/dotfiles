@@ -17,6 +17,7 @@ if(not os.path.exists(pth)):
 root_src_dir = os.path.abspath(os.path.dirname(sys.argv[0]))
 root_dst_dir = os.path.abspath(sys.argv[1])
 
+
 for src_dir, dirs, files in os.walk(root_src_dir):
     dst_dir = src_dir.replace(root_src_dir, root_dst_dir)
     if not os.path.exists(dst_dir):
