@@ -1,0 +1,34 @@
+#! /bin/bash
+
+xrandr --output LVDS1 --mode 1366x768 --noprimary
+xrandr --output VGA1 --left-of LVDS1 --mode 1920x1080 --primary
+
+bspc config border_width        2
+bspc config window_gap         12
+
+bspc config split_ratio         0.52
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   true
+#bspc config focused_border_color "#D6B894"
+bspc config focused_border_color "#FBF1C7"
+
+#change all window gaps
+for m in $(bspc query -M); do
+    bspc config -m $m window_gap 20
+done
+
+#bspc monitor primary -d I II III IV V VI VII VIII IX X
+bspc monitor VGA1 -d I II III IV V
+bspc monitor LVDS1 -d I II III IV V
+bspc monitor VGA1 -s LVDS1
+
+bspc rule -a Screenkey manage=off
+
+#feh --bg-tile /wp/dark_embroidery.png
+feh --bg-fill /wp/fall.png
+
+panel &
+
+#compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88 -i 0.6 -b
+compton -cbi 0.6 -r 5 -t -6 -l -6 -e 0.5

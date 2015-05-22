@@ -1,0 +1,25 @@
+[global_config]
+  borderless = True
+[keybindings]
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    background_image = /wp/forest.png
+    background_darkness = 0.0
+    use_system_font = False
+    scroll_background = False
+    icon_bell = False
+    show_titlebar = False
+    font = Inconsolata Medium 12
+    background_color = "#2d2e2e"
+    foreground_color = "#ffffff"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
