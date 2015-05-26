@@ -1,0 +1,13 @@
+shelltitle ''
+vbell on
+autodetach on
+startup_message off 
+defscrollback 8192
+hardstatus alwayslastline
+
+hardstatus string "%h%{= kg}[%{r} ${USER}@%H %{kg}][ %= %{= kw}%?%-Lw%?%{= kr}(%{= kW}%n*%f %t%?(%u)%?%{= kr})%{= kw}%?%+Lw%?%?%=%{kg}][%{r} %l %{kg}][%{r} %c:%s%{-} %{kg}]%?[%u]%?"
+
+attrcolor b ".I"
+defbce "on"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+term xterm-256color
