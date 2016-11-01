@@ -23,7 +23,7 @@ syntax on
 " turn on this option as well
 set background=dark
 
-execute pathogen#infect()
+"execute pathogen#infect()
 
 " Uncomment the following to have Vim load indentation rules according to the
 " detected filetype. Per default Debian Vim only load filetype specific
@@ -84,12 +84,12 @@ set t_Co=256        "256 couleurs utilisees
 "w!! to reopen with sudo and save
 cmap w!! w !sudo tee % >/dev/null
 
-" CYGWIN/MSYS support
-set bs=2 " Proper backspace behavior
-let &t_ti.="\e[1 q" "^
-let &t_SI.="\e[5 q" "| Block cursor
-let &t_EI.="\e[1 q" "| instead of bar
-let &t_te.="\e[0 q" "v
+"  CYGWIN/MSYS support
+" set bs=2 " Proper backspace behavior
+" let &t_ti.="\e[1 q" "^
+" let &t_SI.="\e[5 q" "| Block cursor
+" let &t_EI.="\e[1 q" "| instead of bar
+" let &t_te.="\e[0 q" "v
 
 " Q short for ex mode is bane of azerty/qwerty switchers
 nnoremap Q <nop>
