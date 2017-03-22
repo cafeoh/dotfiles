@@ -23,7 +23,7 @@ syntax on
 " turn on this option as well
 set background=dark
 
-"execute pathogen#infect()
+execute pathogen#infect()
 
 " Uncomment the following to have Vim load indentation rules according to the
 " detected filetype. Per default Debian Vim only load filetype specific
@@ -36,19 +36,26 @@ endif
 " differently from regular Vi. They are highly recommended though.
 set showcmd        " Show (partial) command in status line.
 set showmatch      " Show matching brackets.
-"set ignorecase     " Do case insensitive matching
-"set smartcase      " Do smart case matching
+set ignorecase     " Ignore case by default
+set smartcase      " Do smart case matching, overrides but needs ignorecase
 "set incsearch      " Incremental search
 "set autowrite      " Automatically save before commands like :next and :make
 "set hidden             " Hide buffers when they are abandoned
 "set mouse=a        " Enable mouse usage (all modes) in terminals
+set title		  " Title is document's name
+
+let leader = "<Space>"
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
+vnoremap <leader>y \"+y
+vnoremap <leader>/ y/<C-R>"<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 "set listchars=tab:▸\ ,eol:¬
-set listchars=tab:▸\
-set list
+"set listchars=tab:▸\
+"set list
+"
+vnoremap // "vy/v<CR>
 
 if has("autocmd") 
   " When editing a file, always jump to the last cursor position 
@@ -66,6 +73,7 @@ set suffixes+=.o
 set suffixes+=.class 
 " }}} 
 
+
 set shiftwidth=2        
 set autoindent      "auto indentation
 set smartindent     "use intelligent indentation for C
@@ -74,35 +82,49 @@ set tabstop=4       "nombre d'espace pour une tabulation
 set shiftwidth=4    "> and < move block by 4 spaces in visual mode
 set expandtab       "transforme les tabs en espaces
 set spelllang=fr,en "langues utilisees
-"set hlsearch        "hilight les recherches
+set hlsearch        "hilight les recherches
 "set textwidth=80    "coupe le texte a 80 caractere, quand on l'ecrit seulement
 set vb t_vb=        "enleve les beep
 set wildmenu        "met une liste des fichiers quand on en cherche un
 set t_Co=256        "256 couleurs utilisees
 "hi Normal ctermbg=none
 
+set scrolloff=5
+
+map <F12> :set invhls<CR>
+
 "w!! to reopen with sudo and save
 cmap w!! w !sudo tee % >/dev/null
 
-"  CYGWIN/MSYS support
-" set bs=2 " Proper backspace behavior
-" let &t_ti.="\e[1 q" "^
-" let &t_SI.="\e[5 q" "| Block cursor
-" let &t_EI.="\e[1 q" "| instead of bar
-" let &t_te.="\e[0 q" "v
-
-" Q short for ex mode is bane of azerty/qwerty switchers
-nnoremap Q <nop>
-
-
 " GIT GUD PUNK
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
 
 
 colorscheme gruvbox
+"colorscheme base16-default-dark
 hi Normal ctermbg=none
 
 filetype plugin on
+
+map <F7> :w !xclip -sel c<CR><CR>
+
+set path=$PWD/**
+
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <CR> :noh<CR>
+
+" Look up the root for a cscope.out
+function! LoadCscope()
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  endif
+endfunction
+au BufEnter /* call LoadCscope()
