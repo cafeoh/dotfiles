@@ -117,6 +117,12 @@ nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <CR> :noh<CR>
 
+"let g:BASH_Ctrl_j = 'off'
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
+
 " Look up the root for a cscope.out
 function! LoadCscope()
   let db = findfile("cscope.out", ".;")
