@@ -114,3 +114,6 @@ if ! shopt -oq posix; then
   export VISUAL=vim
   export EDITOR="$VISUAL"
 fi
+
+# Disable C-S screen freezing
+stty -ixon
