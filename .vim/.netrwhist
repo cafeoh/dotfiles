@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/etc/cron.d'
-let g:netrw_dirhist_2='/home/maxime/Perforce/powervr/swgraphics/rogueddk/MAIN'
-let g:netrw_dirhist_3='/home/maxime/Perforce/powervr/swgraphics/rogueddk/MAIN/build'
-let g:netrw_dirhist_4='/home/maxime/Perforce/powervr/swgraphics/rogueddk/MAIN'
-let g:netrw_dirhist_5='/home/maxime/Perforce/powervr/swgraphics/rogueddk/MAIN/build'
-let g:netrw_dirhist_6='/home/maxime/Perforce/powervr/swgraphics/rogueddk/MAIN'
-let g:netrw_dirhist_7='/home/maxime/Perforce/powervr/swgraphics/rogueddk/MAIN/opengles3'
-let g:netrw_dirhist_8='/home/maxime/Perforce/powervr/swgraphics/rogueddk/MAIN'
-let g:netrw_dirhist_9='/home/maxime/Perforce/powervr/swgraphics/rogueddk/MAIN/opengles3'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/cafe/.oh-my-zsh'
+let g:netrw_dirhist_2='/home/cafe/Documents/main/system/include/RxCpp'
+let g:netrw_dirhist_3='/home/cafe/Documents/main/.git'

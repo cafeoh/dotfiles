@@ -62,7 +62,7 @@ ZSH_THEME="refined"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found dirhistory docker docker-compose npm python sudo web-search colorize colored-man-pages bower node npm history debian autojump common-aliases ) 
+plugins=(git command-not-found dirhistory docker docker-compose npm python sudo web-search colorize colored-man-pages bower node npm history debian autojump common-aliases tmux) 
 
 source $ZSH/oh-my-zsh.sh
 

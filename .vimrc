@@ -11,9 +11,12 @@ filetype off
 call pathogen#infect()
 filetype plugin indent on
 
+let g:airline_powerline_fonts = 1
+
 " }}}
 " Basic options ----------------------------------------------------------- {{{
 
+"set encoding=utf-8
 set modelines=0
 set autoindent
 set showmode
@@ -209,12 +212,16 @@ nnoremap - :wincmd =<cr>
 nnoremap <leader>n :setlocal number!<cr>
 
 " Sort lines
-nnoremap <leader>s vip:sort<cr>
-vnoremap <leader>s :sort<cr>
+" nnoremap <leader>s vip:sort<cr>
+" vnoremap <leader>s :sort<cr>
+
+" Open shell
+nnoremap <leader>s :silent !$SHELL<cr>:redr!<cr>
 
 " Tabs
 nnoremap <leader>( :tabprev<cr>
 nnoremap <leader>) :tabnext<cr>
+
 
 " My garbage brain can't ever remember digraph codes
 inoremap <c-k><c-k> <esc>:help digraph-table<cr>
@@ -749,6 +756,17 @@ augroup ft_glsl
 augroup END
 
 " }}}
+" GYP {{{
+
+augroup ft_gyp
+    au!
+
+    au BufNewFile,BufRead *.gyp setlocal filetype=gyp
+
+    au FileType gyp setlocal foldmethod=marker foldmarker={,}
+    au FileType gyp setlocal ts=2 sts=2 sw=2 expandtab
+
+" }}}
 " Java {{{
 
 augroup ft_java
@@ -767,7 +785,7 @@ augroup ft_javascript
 
     au FileType javascript setlocal foldmethod=marker
     au FileType javascript setlocal foldmarker={,}
-    au FileType javascript call MakeSpacelessBufferIabbrev('clog', 'console.log();<left><left>')
+    "au FileType javascript call MakeSpacelessBufferIabbrev('clog', 'console.log();<left><left>')
 
     " Make {<cr> insert a pair of brackets in such a way that the cursor is correctly
     " positioned inside of them AND the following code doesn't get unfolded.
