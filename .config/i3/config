@@ -29,6 +29,8 @@ font pango:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+focus_follows_mouse no
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -177,3 +179,30 @@ bar {
 
 for_window [class=".*"] border pixel 2
 gaps inner 10
+
+bindsym $mod+m exec "mirrorswitch"
+
+exec xrandr --auto --output HDMI-1 --left-of eDP-1
+exec xrandr --output eDP-1 --primary
+
+workspace 1 output eDP-1
+workspace 2 output eDP-1
+workspace 3 output eDP-1
+workspace 4 output eDP-1
+workspace 5 output eDP-1
+workspace 6 output HDMI-1
+workspace 7 output HDMI-1
+workspace 8 output HDMI-1
+workspace 9 output HDMI-1
+workspace 10 output HDMI-1
+
+
+##### COLORS #####
+# class                 border  backgr. text    indicator child_border
+client.focused          #ffffff #285577 #ffffff #2e9ef4   #8EC07C
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #676B54
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff

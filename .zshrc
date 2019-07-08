@@ -66,6 +66,8 @@ plugins=(git command-not-found dirhistory docker docker-compose npm python sudo 
 
 source $ZSH/oh-my-zsh.sh
 
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

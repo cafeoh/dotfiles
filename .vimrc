@@ -752,7 +752,7 @@ augroup ft_glsl
     au BufNewFile,BufRead *.shader setlocal filetype=glsl
 
     au FileType glsl setlocal foldmethod=marker foldmarker={,}
-    au FileType glsl setlocal ts=8 sts=8 sw=8 noexpandtab
+    au FileType glsl setlocal ts=4 sts=4 sw=4 noexpandtab
 augroup END
 
 " }}}
@@ -764,7 +764,7 @@ augroup ft_gyp
     au BufNewFile,BufRead *.gyp setlocal filetype=gyp
 
     au FileType gyp setlocal foldmethod=marker foldmarker={,}
-    au FileType gyp setlocal ts=2 sts=2 sw=2 expandtab
+    au FileType gyp setlocal ts=4 sts=4 sw=4 expandtab
 
 " }}}
 " Java {{{
