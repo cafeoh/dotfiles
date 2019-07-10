@@ -8,16 +8,16 @@ sudo apt-get upgrade
 
 cp -rf .* ..
 
-sudo apt-get install git vim exuberant-ctags ack
+sudo apt-get install git vim exuberant-ctags ack cmake
 
 ##### i3-gaps #####
-sudo apt-get install i3
-cd ~
-git clone https://github.com/maestrogerardo/i3-gaps-deb
-cd i3-gaps-deb
-./i3-gaps-deb
-cd $PREV
-cp -rf .config ../
+# sudo apt-get install i3
+# cd ~
+# git clone https://github.com/maestrogerardo/i3-gaps-deb
+# cd i3-gaps-deb
+# ./i3-gaps-deb
+# cd $PREV
+# cp -rf .config ../
 
 
 ####   zsh   #####
