@@ -88,10 +88,10 @@ bindsym $mod+Shift+space exec rofi -show run -theme regolith-theme
 bindsym $mod+Ctrl+space exec rofi -show window -theme regolith-theme
 
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -99,15 +99,19 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # move windows in workspaces
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
 
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+#move workspace on monitor
+bindsym $mod+twosuperior move workspace to output right
+bindsym $mod+Shift+twosuperior move workspace to output left
 
 # resize focused window
 bindsym $mod+y resize shrink width 10 px or 10 ppt
@@ -283,6 +287,7 @@ bar {
 # Custom
 
 bindsym $mod+m exec "mirrorswitch"
+bindsym $mod+shift+m exec arandr
 
 # Run programs when i3 starts
 
